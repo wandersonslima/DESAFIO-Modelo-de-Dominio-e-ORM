@@ -13,6 +13,8 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(columnDefinition = "TEXT")
     private String descricao;
 
     @OneToMany(mappedBy = "categoria")
@@ -39,10 +41,6 @@ public class Categoria {
 
     public List<Atividade> getAtividades() {
         return atividades;
-    }
-
-    public void setAtividades(List<Atividade> atividades) {
-        this.atividades = atividades;
     }
 
     @Override
